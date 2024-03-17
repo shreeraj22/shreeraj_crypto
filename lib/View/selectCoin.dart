@@ -45,7 +45,7 @@ class _SelectCoinState extends State<SelectCoin> {
                   Row(
                     children: [
                       Container(
-                          height: myHeight * 0.08,
+                          height: myHeight * 0.05,
                           child: Image.network(widget.selectItem.image)),
                       SizedBox(
                         width: myWidth * 0.03,
@@ -280,47 +280,6 @@ class _SelectCoinState extends State<SelectCoin> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: myHeight * 0.04,
-                ),
-                Expanded(
-                    child: ListView(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: myWidth * 0.06),
-                      child: Text(
-                        'News',
-                        style: TextStyle(fontSize: 25),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: myWidth * 0.06,
-                          vertical: myHeight * 0.01),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                              textAlign: TextAlign.justify,
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 17),
-                            ),
-                          ),
-                          Container(
-                            width: myWidth * 0.25,
-                            child: CircleAvatar(
-                              radius: myHeight * 0.04,
-                              backgroundImage:
-                                  AssetImage('assets/image/11.PNG'),
-                            ),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                ))
               ],
             )),
             Container(

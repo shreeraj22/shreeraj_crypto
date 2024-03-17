@@ -18,13 +18,10 @@ class Item extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Container(
-                  height: myHeight * 0.05, child: Image.network(item.image)),
-            ),
-            SizedBox(
-              width: myWidth * 0.02,
+                  height: myHeight * 0.0, child: Image.network(item.image)),
             ),
             Expanded(
-              flex: 2,
+              flex: 1,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -41,9 +38,6 @@ class Item extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-            SizedBox(
-              width: myWidth * 0.01,
             ),
             Expanded(
               flex: 2,
@@ -68,7 +62,7 @@ class Item extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: myWidth * 0.04,
+              width: myWidth * 0.01,
             ),
             Expanded(
               flex: 2,
@@ -95,7 +89,7 @@ class Item extends StatelessWidget {
                             color: Colors.grey),
                       ),
                       SizedBox(
-                        width: myWidth * 0.03,
+                        width: myWidth * 0.02,
                       ),
                       Text(
                         item.marketCapChangePercentage24H.toStringAsFixed(2) +

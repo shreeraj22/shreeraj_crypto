@@ -15,7 +15,11 @@ class Item2 extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (contest) => SelectCoin(selectItem: item,)));
+              context,
+              MaterialPageRoute(
+                  builder: (contest) => SelectCoin(
+                        selectItem: item,
+                      )));
         },
         child: Container(
           padding: EdgeInsets.only(
@@ -31,9 +35,9 @@ class Item2 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                  height: myHeight * 0.035, child: Image.network(item.image)),
+                  height: myHeight * 0.025, child: Image.network(item.image)),
               SizedBox(
-                height: myHeight * 0.02,
+                height: myHeight * 0.01,
               ),
               Text(
                 item.id,

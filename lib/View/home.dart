@@ -39,39 +39,12 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(vertical: myHeight * 0.03),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: myWidth * 0.02, vertical: myHeight * 0.005),
-                    decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(5)),
-                    child: Text(
-                      'Main portfolio',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  Text(
-                    'Top 10 coins',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  Text(
-                    'Exprimental',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
               padding: EdgeInsets.symmetric(horizontal: myWidth * 0.07),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '\$ 7,466.20',
+                    'Welcome User!',
                     style: TextStyle(fontSize: 35),
                   ),
                   Container(
@@ -88,22 +61,8 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: myWidth * 0.07),
-              child: Row(
-                children: [
-                  Text(
-                    '+162% all time',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: myHeight * 0.02,
-            ),
             Container(
-              height: myHeight * 0.7,
+              height: myHeight * 0.745,
               width: myWidth,
               decoration: BoxDecoration(
                   boxShadow: [
@@ -160,7 +119,6 @@ class _HomeState extends State<Home> {
                             : ListView.builder(
                                 itemCount: 4,
                                 shrinkWrap: true,
-                                physics: NeverScrollableScrollPhysics(),
                                 itemBuilder: (context, index) {
                                   return Item(
                                     item: coinMarket![index],
@@ -234,7 +192,7 @@ class _HomeState extends State<Home> {
   var coinMarketList;
   Future<List<CoinModel>?> getCoinMarket() async {
     const url =
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&sparkline=true';
+        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&sparkline=true&x_cg_demo_api_key=CG-2BxjG9CC7JyJFsQXhWADzD3q';
 
     setState(() {
       isRefreshing = true;
