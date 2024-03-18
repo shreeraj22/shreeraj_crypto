@@ -11,14 +11,14 @@ class Item extends StatelessWidget {
     double myWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: EdgeInsets.symmetric(
-          horizontal: myWidth * 0.06, vertical: myHeight * 0.02),
+          horizontal: myWidth * 0.02, vertical: myHeight * 0.02),
       child: Container(
         child: Row(
           children: [
             Expanded(
               flex: 1,
               child: Container(
-                  height: myHeight * 0.0, child: Image.network(item.image)),
+                  height: myHeight * 0.04, child: Image.network(item.image)),
             ),
             Expanded(
               flex: 1,

@@ -55,7 +55,7 @@ class _SelectCoinState extends State<SelectCoin> {
                         children: [
                           Text(
                             widget.selectItem.id,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                           SizedBox(
@@ -63,7 +63,7 @@ class _SelectCoinState extends State<SelectCoin> {
                           ),
                           Text(
                             widget.selectItem.symbol,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.normal,
                                 color: Colors.grey),
@@ -76,8 +76,8 @@ class _SelectCoinState extends State<SelectCoin> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        '\$' + widget.selectItem.currentPrice.toString(),
-                        style: TextStyle(
+                        '\$${widget.selectItem.currentPrice}',
+                        style:const  TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.normal,
                             color: Colors.black),
@@ -86,9 +86,7 @@ class _SelectCoinState extends State<SelectCoin> {
                         height: myHeight * 0.01,
                       ),
                       Text(
-                        widget.selectItem.marketCapChangePercentage24H
-                                .toString() +
-                            '%',
+                        '${widget.selectItem.marketCapChangePercentage24H}%',
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.normal,
@@ -103,7 +101,7 @@ class _SelectCoinState extends State<SelectCoin> {
                 ],
               ),
             ),
-            Divider(),
+            const Divider(),
             Expanded(
                 child: Column(
               children: [
@@ -115,7 +113,7 @@ class _SelectCoinState extends State<SelectCoin> {
                     children: [
                       Column(
                         children: [
-                          Text(
+                          const Text(
                             'Low',
                             style: TextStyle(
                                 fontSize: 20,
@@ -126,8 +124,8 @@ class _SelectCoinState extends State<SelectCoin> {
                             height: myHeight * 0.01,
                           ),
                           Text(
-                            '\$' + widget.selectItem.low24H.toString(),
-                            style: TextStyle(
+                            '\$${widget.selectItem.low24H}',
+                            style: const TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.normal,
                                 color: Colors.black),
@@ -136,7 +134,7 @@ class _SelectCoinState extends State<SelectCoin> {
                       ),
                       Column(
                         children: [
-                          Text(
+                          const Text(
                             'High',
                             style: TextStyle(
                                 fontSize: 20,
@@ -147,8 +145,8 @@ class _SelectCoinState extends State<SelectCoin> {
                             height: myHeight * 0.01,
                           ),
                           Text(
-                            '\$' + widget.selectItem.high24H.toString(),
-                            style: TextStyle(
+                            '\$${widget.selectItem.high24H}',
+                            style: const TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.normal,
                                 color: Colors.black),
@@ -157,7 +155,7 @@ class _SelectCoinState extends State<SelectCoin> {
                       ),
                       Column(
                         children: [
-                          Text(
+                          const Text(
                             'Vol',
                             style: TextStyle(
                                 fontSize: 20,
@@ -168,10 +166,8 @@ class _SelectCoinState extends State<SelectCoin> {
                             height: myHeight * 0.01,
                           ),
                           Text(
-                            '\$' +
-                                widget.selectItem.totalVolume.toString() +
-                                'M',
-                            style: TextStyle(
+                            '\$${widget.selectItem.totalVolume}M',
+                            style: const TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.normal,
                                 color: Colors.black),
@@ -184,12 +180,12 @@ class _SelectCoinState extends State<SelectCoin> {
                 SizedBox(
                   height: myHeight * 0.015,
                 ),
-                Container(
+                SizedBox(
                   height: myHeight * 0.4,
                   width: myWidth,
                   // color: Colors.amber,
                   child: isRefresh == true
-                      ? Center(
+                      ? const Center(
                           child: CircularProgressIndicator(
                             color: Color(0xffFBC700),
                           ),
@@ -197,7 +193,7 @@ class _SelectCoinState extends State<SelectCoin> {
                       : itemChart == null
                           ? Padding(
                               padding: EdgeInsets.all(myHeight * 0.06),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   'Attention this Api is free, so you cannot send multiple requests per second, please wait and try again later.',
                                   style: TextStyle(fontSize: 18),
@@ -233,7 +229,7 @@ class _SelectCoinState extends State<SelectCoin> {
                   height: myHeight * 0.01,
                 ),
                 Center(
-                  child: Container(
+                  child: SizedBox(
                     height: myHeight * 0.03,
                     child: ListView.builder(
                       shrinkWrap: true,
@@ -266,12 +262,12 @@ class _SelectCoinState extends State<SelectCoin> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5),
                                 color: textBool[index] == true
-                                    ? Color(0xffFBC700).withOpacity(0.3)
+                                    ? const Color(0xffFBC700).withOpacity(0.3)
                                     : Colors.transparent,
                               ),
                               child: Text(
                                 text[index],
-                                style: TextStyle(fontSize: 18),
+                                style: const TextStyle(fontSize: 18),
                               ),
                             ),
                           ),
@@ -282,13 +278,13 @@ class _SelectCoinState extends State<SelectCoin> {
                 ),
               ],
             )),
-            Container(
+            SizedBox(
               height: myHeight * 0.1,
               width: myWidth,
               // color: Colors.amber,
               child: Column(
                 children: [
-                  Divider(),
+                  const Divider(),
                   SizedBox(
                     height: myHeight * 0.01,
                   ),
@@ -304,7 +300,7 @@ class _SelectCoinState extends State<SelectCoin> {
                               EdgeInsets.symmetric(vertical: myHeight * 0.015),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50),
-                              color: Color(0xffFBC700)),
+                              color: const Color(0xffFBC700)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -312,7 +308,7 @@ class _SelectCoinState extends State<SelectCoin> {
                                 Icons.add,
                                 size: myHeight * 0.02,
                               ),
-                              Text(
+                              const Text(
                                 'Add to portfolio',
                                 style: TextStyle(fontSize: 20),
                               ),
@@ -390,10 +386,8 @@ class _SelectCoinState extends State<SelectCoin> {
   bool isRefresh = true;
 
   Future<void> getChart() async {
-    String url = 'https://api.coingecko.com/api/v3/coins/' +
-        widget.selectItem.id +
-        '/ohlc?vs_currency=usd&days=' +
-        days.toString();
+    String url = '${'https://api.coingecko.com/api/v3/coins/' +
+        widget.selectItem.id}/ohlc?vs_currency=usd&days=$days';
 
     setState(() {
       isRefresh = true;

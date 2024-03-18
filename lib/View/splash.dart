@@ -1,83 +1,77 @@
-import 'package:crypto/View/navBar.dart';
+import 'package:crypto/View/home.dart';
 import 'package:flutter/material.dart';
 
-class Splash extends StatefulWidget {
-  const Splash({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<Splash> createState() => _SplashState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _SplashState extends State<Splash> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    double myHeight = MediaQuery.of(context).size.height;
-    double myWidth = MediaQuery.of(context).size.width;
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Container(
-          height: myHeight,
-          width: myWidth,
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset('assets/image/1.gif'),
-              Column(
+              const Column(
                 children: [
-                  Text(
-                    'The Future',
-                    style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                  SizedBox(
+                    height: 40,
                   ),
                   Text(
-                    'Learn more about cryptocurrency, look to',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.grey),
+                    "Crypto App",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 40,
                   ),
                   Text(
-                    ' the future in IO Crypto',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.grey),
+                    "Team Members",
+                    style: TextStyle(fontSize: 20),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Anay Aher",
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  ),
+                  Text(
+                    "Yuvraj Adhikari",
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  ),
+                  Text(
+                    "Kalpesh Vanage",
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  ),
+                  Text(
+                    "Om Shirodkar",
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  )
                 ],
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: myWidth * 0.14),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => NavBar()));
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Color(0xffFBC700),
-                        borderRadius: BorderRadius.circular(50)),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: myWidth * 0.05,
-                          vertical: myHeight * 0.013),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'CREATE PORTFOLITO  ',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                          RotationTransition(
-                              turns: AlwaysStoppedAnimation(310 / 360),
-                              child: Icon(Icons.arrow_forward_rounded))
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.yellow,
+                        minimumSize: Size(double.infinity, 50)),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Home(),
+                          ));
+                    },
+                    child: const Text(
+                      "Get Started",
+                      style: TextStyle(color: Colors.black),
+                    )),
               )
             ],
           ),

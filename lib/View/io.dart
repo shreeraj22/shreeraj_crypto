@@ -13,10 +13,10 @@ class _IOState extends State<IO> {
   @override
   void initState() {
     Timer(
-      Duration(seconds: 4),
+      const Duration(seconds: 4),
       () {
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Splash()));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const HomeScreen()));
       },
     );
     super.initState();
@@ -28,8 +28,8 @@ class _IOState extends State<IO> {
     double myWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffFBC700),
-        body: Container(
+        backgroundColor: const Color(0xffFBC700),
+        body: SizedBox(
           height: myHeight,
           width: myWidth,
           child: Padding(
@@ -38,9 +38,9 @@ class _IOState extends State<IO> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(''),
-                Text(
-                  'IO Crypto',
+                const Text(''),
+                const Text(
+                  'Crypto',
                   style: TextStyle(
                       fontSize: 60,
                       color: Colors.black,
@@ -51,23 +51,7 @@ class _IOState extends State<IO> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          'Creat by',
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal),
-                        ),
-                        SizedBox(
-                          width: myWidth * 0.02,
-                        ),
-                        Image.asset(
-                          'assets/image/io.png',
-                          height: myHeight * 0.03,
-                          color: Colors.black,
-                        )
-                      ],
+                      children: [],
                     ),
                     SizedBox(
                       height: myHeight * 0.005,
