@@ -8,7 +8,7 @@ import '../Model/chartModel.dart';
 class SelectCoin extends StatefulWidget {
   var selectItem;
 
-  SelectCoin({this.selectItem});
+  SelectCoin({super.key, this.selectItem});
 
   @override
   State<SelectCoin> createState() => _SelectCoinState();
@@ -31,7 +31,7 @@ class _SelectCoinState extends State<SelectCoin> {
     double myWidth = MediaQuery.of(context).size.width;
     return SafeArea(
         child: Scaffold(
-      body: Container(
+      body: SizedBox(
         height: myHeight,
         width: myWidth,
         child: Column(
@@ -44,7 +44,7 @@ class _SelectCoinState extends State<SelectCoin> {
                 children: [
                   Row(
                     children: [
-                      Container(
+                      SizedBox(
                           height: myHeight * 0.05,
                           child: Image.network(widget.selectItem.image)),
                       SizedBox(
@@ -77,7 +77,7 @@ class _SelectCoinState extends State<SelectCoin> {
                     children: [
                       Text(
                         '\$${widget.selectItem.currentPrice}',
-                        style:const  TextStyle(
+                        style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.normal,
                             color: Colors.black),
@@ -386,8 +386,8 @@ class _SelectCoinState extends State<SelectCoin> {
   bool isRefresh = true;
 
   Future<void> getChart() async {
-    String url = '${'https://api.coingecko.com/api/v3/coins/' +
-        widget.selectItem.id}/ohlc?vs_currency=usd&days=$days';
+    String url =
+        '${'https://api.coingecko.com/api/v3/coins/' + widget.selectItem.id}/ohlc?vs_currency=usd&days=$days';
 
     setState(() {
       isRefresh = true;

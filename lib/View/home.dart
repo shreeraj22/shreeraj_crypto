@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Padding(
@@ -110,7 +110,7 @@ class _HomeState extends State<Home> {
                                 color: Color(0xffFBC700),
                               ),
                             )
-                          : coinMarket == null || coinMarket!.length == 0
+                          : coinMarket == null || coinMarket!.isEmpty
                               ? Padding(
                                   padding:
                                       EdgeInsets.only(top: myHeight * 0.06),
@@ -229,5 +229,6 @@ class _HomeState extends State<Home> {
     } else {
       print(response.statusCode);
     }
+    return null;
   }
 }

@@ -37,21 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 20,
                   ),
                   Text(
-                    "Anay Aher",
-                    style: TextStyle(fontSize: 18, color: Colors.black),
+                    "Shreeraj ",
+                    style: TextStyle(fontSize: 30, color: Colors.black),
                   ),
-                  Text(
-                    "Yuvraj Adhikari",
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                  ),
-                  Text(
-                    "Kalpesh Vanage",
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                  ),
-                  Text(
-                    "Om Shirodkar",
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                  )
                 ],
               ),
               Padding(
@@ -60,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.yellow,
-                        minimumSize: Size(double.infinity, 50)),
+                        minimumSize: const Size(double.infinity, 50)),
                     onPressed: () {
                       Navigator.push(
                           context,

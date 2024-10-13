@@ -1,8 +1,5 @@
 import 'package:crypto/View/io.dart';
-import 'package:crypto/View/splash.dart';
 import 'package:flutter/material.dart';
-
-
 
 void main() {
   runApp(const MyApp());
